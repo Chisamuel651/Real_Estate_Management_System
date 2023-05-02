@@ -18,7 +18,7 @@
     $listings = $search->fetchAll(PDO::FETCH_OBJ);
 
   }else{
-    header("location: ".APPURL."");
+    header("location: index.php");
   }
 ?>
 
@@ -91,8 +91,8 @@
           <div class="col-md-12">
             <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
               <div class="mr-auto">
-                <a href="index.html" class="icon-view view-module active"><span class="icon-view_module"></span></a>
-                <a href="view-list.html" class="icon-view view-list"><span class="icon-view_list"></span></a>
+                <a href="index.php" class="icon-view view-module active"><span class="icon-view_module"></span></a>
+                <!-- <a href="view-list.html" class="icon-view view-list"><span class="icon-view_list"></span></a> -->
                 
               </div>
               <div class="ml-auto d-flex align-items-center">
@@ -134,7 +134,7 @@
                     <img src="images/<?php echo $listing->image; ?>" alt="Image" class="img-fluid">
                   </a>
                   <div class="p-4 property-body">
-                    <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
+                    <!-- <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a> -->
                     <h2 class="property-title"><a href="property-details.php?id=<?php echo $listing->id; ?>"><?php echo $listing->name; ?></a></h2>
                     <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <?php echo $listing->p_location; ?></span>
                     <strong class="property-price text-primary mb-3 d-block text-success">FCFA <?php echo $listing->price; ?></strong>

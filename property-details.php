@@ -58,7 +58,7 @@
                   <li><a href="buy.html">Buy</a></li>
                   <li><a href="rent.html">Rent</a></li>
                   <li class="has-children">
-                    <a href="properties.html">Properties</a>
+                    <a href="#">Properties</a>
                     <ul class="dropdown arrow-top">
                       <li><a href="#">Condo</a></li>
                       <li><a href="#">Property Land</a></li>

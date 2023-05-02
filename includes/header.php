@@ -1,6 +1,15 @@
 <?php
   session_start();
   define("APPURL", "http://localhost/rems");
+
+  require dirname(dirname(__FILE__)) . "/config/config.php";
+  // echo dirname(dirname(__FILE__));
+
+  $categories = $conn->query("SELECT * from categories");
+  $categories->execute();
+
+  $allCategories = $categories->fetchAll(PDO::FETCH_OBJ);
+
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +68,14 @@
                     <li class="active">
                       <a href="index.php">Home</a>
                     </li>
-                    <li><a href="buy.html">Buy</a></li>
-                    <li><a href="rent.html">Rent</a></li>
+                    <li><a href="<?php echo APPURL; ?>/sale.php?type=sale">Buy</a></li>
+                    <li><a href="<?php echo APPURL; ?>/rent.php?type=rent">Rent</a></li>
                     <li class="has-children">
-                      <a href="properties.html">Properties</a>
+                      <a href="#">Properties</a>
                       <ul class="dropdown arrow-top">
-                        <li><a href="#">Condo</a></li>
-                        <li><a href="#">Property Land</a></li>
-                        <li><a href="#">Commercial Building</a></li>
+                        <?php foreach($allCategories as $allCategory){ ?>
+                          <li><a href="category.php?name=<?php echo $allCategory->name; ?>"><?php echo str_replace('-', ' ', $allCategory->name); ?></a></li>
+                        <?php } ?>
                       </ul>
                     </li>
                     <li><a href="about.php">About</a></li>
